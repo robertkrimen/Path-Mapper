@@ -1,0 +1,88 @@
+NAME
+    Path::Mapper - Map a virtual path to an actual one
+
+VERSION
+    Version 0.01
+
+SYNOPSIS
+        my $mapper = Path::Mapper->new( base => '../' )
+        $mapper->map( a/b => /apple )
+
+        $mapper->dir( /a/b/xyzzy/ ) # /apple/xyzzy
+        $mapper->dir( /a/bxyzzy/ ) # ../a/bxyzzy
+
+DESCRIPTION
+    Path::Mapper will map a virtual path to an actual one, doing a
+    substitution based on the deepest common directory
+
+    Think of it as doing something like symbolic link resolution (though not
+    exactly)
+
+METHODS
+  Path::Mapper->new( [ base => <base> ] )
+    Create a new "Path::Mapper" object using <base> as the 'root' directory
+    (by default, everything is mapped to be under that directory)
+
+  $mapper->base( <base> )
+    Change the base directory for $mapper to <base>
+
+  $mapper->map( <virtual> => <actual> )
+    Set up a map from <virtual> and anything under (e.g. <virtual>/*) to map
+    to the <actual> prefix instead of the usual base
+
+  $mapper->map( <path> )
+    Return a 2-element list containing the actual base for this path and the
+    path remainder. You probably don't want to use this method
+
+  $mapper->dir( <path> )
+    Map the virtual <path> to an actual one and return the result as a
+    Path::Class::Dir object
+
+  $mapper->file( <path> )
+    Map the virtual <path> to an actual one and return the result as a
+    Path::Class::File object
+
+  $mapper->path( <path> )
+    Map the virtual <path> to an actual one and return the result as a
+    Path::Abstract object
+
+AUTHOR
+    Robert Krimen, "<rkrimen at cpan.org>"
+
+BUGS
+    Please report any bugs or feature requests to "bug-path-mapper at
+    rt.cpan.org", or through the web interface at
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Path-Mapper>. I will be
+    notified, and then you'll automatically be notified of progress on your
+    bug as I make changes.
+
+SUPPORT
+    You can find documentation for this module with the perldoc command.
+
+        perldoc Path::Mapper
+
+    You can also look for information at:
+
+    *   RT: CPAN's request tracker
+
+        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=Path-Mapper>
+
+    *   AnnoCPAN: Annotated CPAN documentation
+
+        <http://annocpan.org/dist/Path-Mapper>
+
+    *   CPAN Ratings
+
+        <http://cpanratings.perl.org/d/Path-Mapper>
+
+    *   Search CPAN
+
+        <http://search.cpan.org/dist/Path-Mapper/>
+
+ACKNOWLEDGEMENTS
+COPYRIGHT & LICENSE
+    Copyright 2009 Robert Krimen, all rights reserved.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
