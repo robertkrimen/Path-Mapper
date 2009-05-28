@@ -49,3 +49,10 @@ test '';
 test 'cherry';
 test '/';
 test 'grape/';
+
+$mapper = Path::Mapper->new( base => 'apple' );
+is( $mapper->path( '/' ), 'apple' );
+$mapper->map( '/', 'banana' );
+is( $mapper->path( '/' ), 'banana' );
+$mapper->map( '', 'cherry' );
+is( $mapper->path( '/' ), 'cherry' );

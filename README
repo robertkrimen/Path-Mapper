@@ -32,7 +32,7 @@ METHODS
 
   $mapper->map( <path> )
     Return a 2-element list containing the actual base for this path and the
-    path remainder. You probably don't want to use this method
+    path remainder. You probably don't want/need to use this method
 
   $mapper->dir( <path> )
     Map the virtual <path> to an actual one and return the result as a
