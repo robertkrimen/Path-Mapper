@@ -1,2 +1,6 @@
+0.011 Friday May 14 16:23:44 PDT 2010:
+    - Use Any::Moose (Mouse) instead of Moose
+    - Conversion to dzpl for build process
+
 0.010 Tuesday April 14 19:51:34 PDT 2009:
     - Initial release

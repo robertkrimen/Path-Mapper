@@ -1,0 +1,20 @@
+#!/usr/bin/env perl
+use Dzpl
+    name => 'Path-Mapper',
+    version => '0.011',
+    author => 'Robert Krimen <robertkrimen@gmail.com>',
+    license => 'Perl5',
+    copyright => 'Robert Krimen',
+
+    require => q/
+        Any::Moose
+        Path::Abstract
+        Path::Class
+
+        [Test]
+        Test::Most
+    /,
+;
+
+{ plugin '@ROKR' }
+
