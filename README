@@ -2,7 +2,7 @@ NAME
     Path::Mapper - Map a virtual path to an actual one
 
 VERSION
-    version 0.011
+    version 0.012
 
 SYNOPSIS
         my $mapper = Path::Mapper->new( base => '../' )
